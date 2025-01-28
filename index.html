@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>House Fact</h1>
+        <p id="fact"></p>
+        <button id="nextFact">Next Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            "The average size of a new single-family home in the U.S. is around 2,500 square feet.",
+            "Houses can be built from various materials, including wood, brick, concrete, and steel.",
+            "The concept of a house dates back to prehistoric times when humans first built shelters.",
+            "In many cultures, the front door of a house is considered a symbol of welcome and hospitality.",
+            "The term 'house' can refer to both the physical structure and the family or group living within it.",
+            "The world's oldest known house is believed to be around 5,000 years old and is located in the Middle East.",
+            "Houses can be classified into various styles, such as colonial, modern, Victorian, and ranch.",
+            "In some cultures, houses are built with specific orientations to capture sunlight or wind.",
+            "The average American moves about 11 times in their lifetime, often changing houses.",
+            "Smart homes are becoming increasingly popular, integrating technology for automation and energy efficiency."
+        ];
+
+        let currentFactIndex = 0;
+
+        function displayFact() {
+            document.getElementById('fact').innerText = facts[currentFactIndex];
+        }
+
+        document.getElementById('nextFact').addEventListener('click', () => {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            displayFact();
+        });
+
+        // Display the first fact on page load
+        displayFact();
+    </script>
+</body>
+</html>
